@@ -1,5 +1,5 @@
-<h2>This is where the form goes</h2>
-<div *ngFor='let character of characters | async'>
+<h3>Create Your Character</h3>
+<div *ngFor='let character of characters | async' (click)='showCharacter(character)'>
   <p>{{character.name}}</p>
 </div>
 
@@ -8,11 +8,34 @@
   <input #newName>
 </div>
 <div>
- <label>Select Superpower:</label>
- <select #newSuperpower>
-   <option [value]="Singing"> Singing </option>
-   <option [value]="Invisibility"> Invisibility </option>
-   <option [value]="Engineer"> Engineer </option>
- </select>
- <button (click)="submitForm(newName.value, newSuperpower.value); newName.value='';">Add</button>
- </div>
+  <label>Select Superpower:</label>
+  <select #newSuperpower>
+    <option [value]="Singing"> Singing </option>
+    <option [value]="Invisibility"> Invisibility </option>
+    <option [value]="Engineer"> Engineer </option>
+  </select>
+  <button (click)="submitForm(newName.value, newSuperpower.value); newName.value='';">Add</button>
+</div>
+
+
+<div class="story-line" *ngIf="selectedCharacter">
+  <h1></h1>
+  <h4>Here's some background!</h4>
+  <p>Moana Waialiki is the strong-willed daughter of the chief of a Polynesian tribe, who is chosen by the ocean itself to reunite a mystical stone to a goddess with the help of a demigod named Maui.</p>
+  <p>Moana is conflicted between following her destiny or staying and helping her people on the island. {{selectedCharacter.name}}, now it's your turn to help! What should you do?</p>
+  <hr>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <a routerLink="stay-island">
+        <p>Leaving the island is too risky and Moana should stay behind to care for her people. You decide you to prevent her from leaving. </p>
+      </a>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <a routerLink="end-game">
+        <p>Leaving the island may be risky but the island is dying and needs help. You decide to offer your assistance to help her get off the island.</p>
+      </a>
+    </div>
+  </div>
+</div>

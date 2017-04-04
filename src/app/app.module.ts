@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { masterFireBaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
+import { StayIslandComponent } from './stay-island/stay-island.component';
+import { EndGameComponent } from './end-game/end-game.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCgq1MxlijZtXRWGNYMi98v4NVdD9sjC1A",
@@ -20,7 +22,9 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    StayIslandComponent,
+    EndGameComponent
   ],
   imports: [
     BrowserModule,

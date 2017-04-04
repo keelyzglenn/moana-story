@@ -24,6 +24,12 @@ export class HomeComponent implements OnInit{
 
   submitForm(name: string, superpower: string) {
     var newCharacter: Character = new Character(name, superpower);
-    this.charactersService.addCharacter(newCharacter); 
+    this.charactersService.addCharacter(newCharacter);
+  }
+
+  selectedCharacter = null;
+
+  showCharacter(clickedCharacter) {
+    this.selectedCharacter = clickedCharacter;
   }
 }
