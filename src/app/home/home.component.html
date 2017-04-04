@@ -1,0 +1,14 @@
+<h2>This is where the form goes</h2>
+<div>
+  <label>Enter Your Name:</label>
+  <input #newName>
+</div>
+<div>
+ <label>Select Superpower:</label>
+ <select #newSuperpower>
+   <option [value]="Singing"> Singing </option>
+   <option [value]="Invisibility"> Invisibility </option>
+   <option [value]="Engineer"> Engineer </option>
+ </select>
+ <button (click)="submitForm(newName.value, newSuperpower.value); newName.value='';">Add</button>
+ </div>
