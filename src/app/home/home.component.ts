@@ -1,17 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Character } from '../character.model';
+import { CharactersService } from '../characters.service';
+import { Router } from '@angular/router';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [CharactersService]
 })
 
-export class HomeComponent {
-  characters: Character[] = [];
+export class HomeComponent implements OnInit{
 
-  submitForm(name: string, superpower: string) {
-    var newCharacter: Character = new Character(name, superpower);
-    this.characters.push(newCharacter);
+  characters: FirebaseListObservable<any[]>;
+
+  constructor(private router: Router, private charactersService: CharactersService){}
+
+  ngOnInit(){
+     this.characters = this.charactersService.getCharacters(); 
   }
+
+  //
+  // submitForm(name: string, superpower: string) {
+  //   var newCharacter: Character = new Character(name, superpower);
+  //   this.characters.push(newCharacter);
+  // }
 }
