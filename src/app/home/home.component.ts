@@ -18,12 +18,12 @@ export class HomeComponent implements OnInit{
   constructor(private router: Router, private charactersService: CharactersService){}
 
   ngOnInit(){
-     this.characters = this.charactersService.getCharacters(); 
+     this.characters = this.charactersService.getCharacters();
   }
 
-  //
-  // submitForm(name: string, superpower: string) {
-  //   var newCharacter: Character = new Character(name, superpower);
-  //   this.characters.push(newCharacter);
-  // }
+
+  submitForm(name: string, superpower: string) {
+    var newCharacter: Character = new Character(name, superpower);
+    this.charactersService.addCharacter(newCharacter); 
+  }
 }

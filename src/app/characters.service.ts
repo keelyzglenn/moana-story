@@ -13,4 +13,8 @@ export class CharactersService {
    getCharacters(){
      return this.characters;
    }
+
+   addCharacter(newCharacter: Character) {
+     this.characters.push(newCharacter); 
+   }
   }
