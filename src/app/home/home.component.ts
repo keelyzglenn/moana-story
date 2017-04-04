@@ -32,4 +32,14 @@ export class HomeComponent implements OnInit{
   showCharacter(clickedCharacter) {
     this.selectedCharacter = clickedCharacter;
   }
+
+  currentCharacter = null;
+
+  addPoint(clickedCharacter){
+
+    clickedCharacter.points = parseInt(clickedCharacter.points) + 1;
+
+  }
+
+
 }

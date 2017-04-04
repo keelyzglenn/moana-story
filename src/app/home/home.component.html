@@ -1,6 +1,9 @@
 <h3>Create Your Character</h3>
 <div *ngFor='let character of characters | async' (click)='showCharacter(character)'>
   <p>{{character.name}}</p>
+  <p>{{character.points}}</p>
+
+    <button (click)="addPoint(character)">+</button>
 </div>
 
 <div>
@@ -16,6 +19,8 @@
   </select>
   <button (click)="submitForm(newName.value, newSuperpower.value); newName.value='';">Add</button>
 </div>
+
+
 
 
 <div class="story-line" *ngIf="selectedCharacter">
