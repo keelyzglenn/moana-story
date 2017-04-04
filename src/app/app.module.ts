@@ -9,6 +9,9 @@ import { masterFireBaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { StayIslandComponent } from './stay-island/stay-island.component';
 import { EndGameComponent } from './end-game/end-game.component';
+import { HelpMoanaComponent } from './help-moana/help-moana.component';
+import { HideComponent } from './hide/hide.component';
+import { DistractComponent } from './distract/distract.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCgq1MxlijZtXRWGNYMi98v4NVdD9sjC1A",
@@ -24,7 +27,10 @@ export const firebaseConfig = {
     AppComponent,
     HomeComponent,
     StayIslandComponent,
-    EndGameComponent
+    EndGameComponent,
+    HelpMoanaComponent,
+    HideComponent,
+    DistractComponent
   ],
   imports: [
     BrowserModule,
