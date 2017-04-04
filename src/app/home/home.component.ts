@@ -15,10 +15,12 @@ export class HomeComponent implements OnInit{
 
   characters: FirebaseListObservable<any[]>;
 
+
   constructor(private router: Router, private charactersService: CharactersService){}
 
   ngOnInit(){
      this.characters = this.charactersService.getCharacters();
+
   }
 
 
@@ -33,13 +35,8 @@ export class HomeComponent implements OnInit{
     this.selectedCharacter = clickedCharacter;
   }
 
-  currentCharacter = null;
-
-  addPoint(clickedCharacter){
-
-    clickedCharacter.points = parseInt(clickedCharacter.points) + 1;
-
+  addPointLocal(character){
+    this.charactersService.addPoint(character);
   }
-
 
 }

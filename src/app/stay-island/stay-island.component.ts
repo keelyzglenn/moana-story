@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Character } from '../character.model';
 import { CharactersService } from '../characters.service';
@@ -13,5 +13,6 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class StayIslandComponent {
 
   constructor(private router: Router){}
+
 
 }

@@ -15,6 +15,12 @@ export class CharactersService {
    }
 
    addCharacter(newCharacter: Character) {
-     this.characters.push(newCharacter); 
+     this.characters.push(newCharacter);
    }
+
+
+   addPoint(clickedCharacter: Character){
+     clickedCharacter.points = clickedCharacter.points + 1;
+   }
+
   }

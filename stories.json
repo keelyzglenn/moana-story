@@ -1,10 +1,10 @@
 { "characters": [{
     "name": "Keely",
     "superpower": "Invisibility",
-    "points": "0"
+    "points": 1
     }, {
     "name": "Tammy",
     "superpower": "Bend water",
-    "points": "0"
+    "points": 1
   }]
 }
